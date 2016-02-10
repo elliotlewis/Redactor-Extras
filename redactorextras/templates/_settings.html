@@ -16,7 +16,7 @@
     <li>Video <code class="inlinecode">'video'</code></li>
 </ul>
 
-<p>To use create a new config json as per the <a href="https://craftcms.com/docs/rich-text-fields#redactor-configs">documentation</a>.</p>
+<p>To use a plugin edit an existing config or create a new config json file as per Craft's <a href="https://craftcms.com/docs/rich-text-fields#redactor-configs">documentation</a>.</p>
 
 <pre style="
     margin: 0.5em 0;
@@ -63,7 +63,7 @@
 	label:        "Alignment"|t,
 	id:           "alignment",
 	name:         "alignment",
-	instructions: "Applies a specific class to selected text, allowing developers to tweak alignment precisely. <code class=\"inlinecode\">'alignment'</code>"|t,
+	instructions: "Applies a class to selected text. CSS classes are: 'text-center' and 'text-right'. <code class=\"inlinecode\">'alignment'</code>"|t,
 	on:           settings.alignment,
 	first:        true,
 	errors:       settings.getErrors('alignment')
