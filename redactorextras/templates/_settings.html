@@ -1,0 +1,90 @@
+{% import '_includes/forms' as forms %}
+
+<style>
+    .inlinecode{
+        border: 1px solid hsl(212, 2%, 90%);color: #657b83;background: hsl(212, 2%, 97%);
+    }
+</style>
+
+<p>Craft ships with the following Redactor plugins:</p>
+
+<ul class="bullets">
+    <li>Fullscreen editing <code class="inlinecode">'fullscreen'</code></li>
+    <li>View/edit HTML source <code class="inlinecode">'source'</code></li>
+    <li>Table <code class="inlinecode">'table'</code></li>
+    <li>Page break <code class="inlinecode">'pagebreak'</code></li>
+    <li>Video <code class="inlinecode">'video'</code></li>
+</ul>
+
+<p>To use create a new config json as per the <a href="https://craftcms.com/docs/rich-text-fields#redactor-configs">documentation</a>.</p>
+
+<pre style="
+    margin: 0.5em 0;
+    border: 1px solid hsl(212, 2%, 90%);
+    padding: 14px;
+    word-wrap: normal;
+    overflow: auto;
+    color: #657b83;
+    background: hsl(212, 2%, 97%);">
+    <code>
+    {
+        "plugins": ["fullscreen", "source", "table", "pagebreak", "video"]
+    }
+    </code>
+</pre>
+
+<hr>
+
+<h2>Extra plugins</h2>
+
+<p>Choose from the available extra Redactor plugins:</p>
+
+{{ forms.lightswitchField({
+	label:        "Superscript and Subscript"|t,
+	id:           "scriptButtons",
+	name:         "scriptButtons",
+    instructions: "&lt;sup&gt; and &lt;sub&gt;. <code class=\"inlinecode\">'scriptbuttons'</code>"|t,
+	on:           settings.scriptButtons,
+	first:        true,
+	errors:       settings.getErrors('scriptButtons')
+}) }}
+
+{{ forms.lightswitchField({
+	label:        "Word count"|t,
+	id:           "counter",
+	name:         "counter",
+	instructions: "Word and character count. <code class=\"inlinecode\">'counter'</code>"|t,
+	on:           settings.counter,
+	first:        true,
+	errors:       settings.getErrors('counter')
+}) }}
+
+{{ forms.lightswitchField({
+	label:        "Alignment"|t,
+	id:           "alignment",
+	name:         "alignment",
+	instructions: "Applies a specific class to selected text, allowing developers to tweak alignment precisely. <code class=\"inlinecode\">'alignment'</code>"|t,
+	on:           settings.alignment,
+	first:        true,
+	errors:       settings.getErrors('alignment')
+}) }}
+
+<h3>Custom plugin</h3>
+
+<p>Link to a custom Redactor JavaScript file. Place the file in public. eg. <code class="inlinecode">/assets/js/extraPlugin.js</code></p>
+
+{{ forms.textField({
+	label:         "JavaScript file"|t,
+	instructions:  "Path to JavaScript file."|t,
+	id:            "extraPluginJs",
+	name:          "extraPluginJs",
+	value:         settings.extraPluginJs,
+}) }}
+
+{{ forms.textField({
+	label:         "CSS file"|t,
+	instructions:  "Path to CSS file."|t,
+	id:            "extraPluginCss",
+	name:          "extraPluginCss",
+	value:         settings.extraPluginCss,
+}) }}
