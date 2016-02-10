@@ -2,7 +2,7 @@
 
 namespace Craft;
 
-class RedactorExtrasPlugin extends BasePlugin
+class redactorExtrasPlugin extends BasePlugin
 {
     function getName()
     {
