@@ -6,6 +6,7 @@ Useful Redactor plugins for Craft's richtext field
 
 ### Version History
 
+1.1 : 16 February 2016
 1.0 : 10 February 2016
 
 ### Requirements
@@ -38,6 +39,7 @@ Available plugin are:
  + Superscript and Subscript
  + Word count
  + Alignment
+ + Character Lmiter
  + Custom plugin
 
 #### Superscript and Subscript
@@ -57,6 +59,15 @@ Adds a 'Word count' button to the toolbar. Overlay modal appears with word and c
 Adds an 'Alignment' button to the toolbar. Aligns text block by adding a class, `text-center` or `text-right`.
 
 ![Image of Redactor with superscript](readme-images/align.png "Super!")
+
+#### Character Lmiter
+
+Limits the number of character in the rich text field to the value definied in <redactor-config>.json.
+
+    {
+        "plugins": ["limiter"],
+        "limiter": 20
+    }
 
 ### Your own custom plugin
 
