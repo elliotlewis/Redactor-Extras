@@ -11,7 +11,7 @@ class redactorExtrasPlugin extends BasePlugin
 
     function getVersion()
     {
-        return '1.0';
+        return '1.1';
     }
 
     function getDeveloper()
@@ -22,6 +22,11 @@ class redactorExtrasPlugin extends BasePlugin
     function getDeveloperUrl()
     {
         return 'http://elliotlewis.co.uk/craft';
+    }
+
+    public function getDocumentationUrl()
+    {
+        return 'https://github.com/elliotlewis/Redactor-Extras';
     }
     
     public function getSourceLanguage()
@@ -39,6 +44,9 @@ class redactorExtrasPlugin extends BasePlugin
                 AttributeType::Bool, 'default' => false
             ),
             'alignment' => array(
+                AttributeType::Bool, 'default' => false
+            ),
+            'limiter' => array(
                 AttributeType::Bool, 'default' => false
             ),
             'extraPluginJs'      => AttributeType::String,
@@ -62,7 +70,7 @@ class redactorExtrasPlugin extends BasePlugin
 
             if($settings->scriptButtons === "1")
             {
-                craft()->templates->includeJsResource('redactorextras/plugins/scriptButtons.js');
+                craft()->templates->includeJsResource('redactorextras/plugins/scriptbuttons.js');
             }
 
             if($settings->counter === "1")
@@ -74,6 +82,11 @@ class redactorExtrasPlugin extends BasePlugin
             {
                 craft()->templates->includeJsResource('redactorextras/plugins/alignment.js');
                 craft()->templates->includeCssResource('redactorextras/plugins/alignment.css');
+            }
+
+            if($settings->limiter === "1")
+            {
+                craft()->templates->includeJsResource('redactorextras/plugins/limiter.js');
             }
             
             if($settings->extraPluginJs != "")

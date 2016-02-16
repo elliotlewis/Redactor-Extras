@@ -1,6 +1,16 @@
 {% import '_includes/forms' as forms %}
 
 <style>
+    /* ripped from Craft docs styles */
+    .codeblock{
+        margin: 0.5em 0;
+        border: 1px solid hsl(212, 2%, 90%);
+        padding: 14px;
+        word-wrap: normal;
+        overflow: auto;
+        color: #657b83;
+        background: hsl(212, 2%, 97%);
+    }
     .inlinecode{
         border: 1px solid hsl(212, 2%, 90%);color: #657b83;background: hsl(212, 2%, 97%);
     }
@@ -18,14 +28,9 @@
 
 <p>To use a plugin edit an existing config or create a new config json file as per Craft's <a href="https://craftcms.com/docs/rich-text-fields#redactor-configs">documentation</a>.</p>
 
-<pre style="
-    margin: 0.5em 0;
-    border: 1px solid hsl(212, 2%, 90%);
-    padding: 14px;
-    word-wrap: normal;
-    overflow: auto;
-    color: #657b83;
-    background: hsl(212, 2%, 97%);">
+<p>The plugins that ship with Craft are located: <code class="inlinecode">craft/app/resources/lib/redactor</code>.</p>
+
+<pre class="codeblock">
     <code>
     {
         "plugins": ["fullscreen", "source", "table", "pagebreak", "video"]
@@ -68,6 +73,28 @@
 	first:        true,
 	errors:       settings.getErrors('alignment')
 }) }}
+
+{{ forms.lightswitchField({
+	label:        "Character limit"|t,
+	id:           "limiter",
+	name:         "limiter",
+	instructions: "Limits character to value specified in config file. <code class=\"inlinecode\">'limiter'</code>"|t,
+	on:           settings.limiter,
+	errors:       settings.getErrors('limiter')
+}) }}
+
+<p>Example: </p>
+
+<pre class="codeblock">
+    <code>
+    {
+        "plugins": ["limiter"],
+        "limiter": 20
+    }
+    </code>
+</pre>
+
+<hr>
 
 <h3>Custom plugin</h3>
 
