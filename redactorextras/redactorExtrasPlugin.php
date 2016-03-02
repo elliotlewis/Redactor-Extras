@@ -65,6 +65,9 @@ class redactorExtrasPlugin extends BasePlugin
 	{
 		if (craft()->request->isCpRequest())
 		{
+	    // Preload redactor. This will prevent race condition errors when using first-party plugins like inlinestyles
+	    craft()->templates->includeJsResource('lib/redactor/redactor.js');
+	    
             // Get settings
             $settings = $this->getSettings();
 
