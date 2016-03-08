@@ -6,8 +6,9 @@ Useful Redactor plugins for Craft's richtext field
 
 ### Version History
 
-1.1 : 16 February 2016
-1.0 : 10 February 2016
+ * 1.2 : 8 March 2016
+ * 1.1 : 16 February 2016
+ * 1.0 : 10 February 2016
 
 ### Requirements
 
@@ -26,7 +27,7 @@ Once installed, in Craft go to `Settings > Plugins` and click the small cog or g
 
 To use a plugin edit an existing config or create a new config json file as per Craft's [documentation](https://craftcms.com/docs/rich-text-fields#redactor-configs).
 
-If you turn on all available plugins, an example config could be:
+Turn on required plugins then an example config could be:
 
     {
         "plugins": ["scriptbuttons", "counter", "alignment"]
@@ -39,7 +40,8 @@ Available plugin are:
  + Superscript and Subscript
  + Word count
  + Alignment
- + Character Lmiter
+ + Properties
+ + Character Limiter
  + Custom plugin
 
 #### Superscript and Subscript
@@ -48,17 +50,39 @@ Adds superscript and subscript buttons to the toolbar. In source, the text is su
 
 ![Image of Redactor with superscript](readme-images/superscript.png "Super!")
 
+	{
+		"plugins": ["scriptbuttons"]
+	}
+
 #### Word / Character count
 
 Adds a 'Word count' button to the toolbar. Overlay modal appears with word and character count.
 
-![Image of Redactor with superscript](readme-images/count.png "Super!")
+![Image of Redactor with superscript](readme-images/count.png "Word count")
+
+	{
+		"plugins": ["counter"]
+	}
 
 #### Alignment
 
 Adds an 'Alignment' button to the toolbar. Aligns text block by adding a class, `text-center` or `text-right`.
 
-![Image of Redactor with superscript](readme-images/align.png "Super!")
+![Image of Redactor with superscript](readme-images/align.png "Alignment")
+
+	{
+		"plugins": ["alignment"]
+	}
+
+#### Properties
+
+Assign an id or class to any block level tag. From the cursor position outwrds, finds the first block level item, eg. p, ul. and adds `id="xx" or class="xx"`. Use the HTML source plugin to view code to see this in action.
+
+![Image of Redactor with properties modal](readme-images/properties.png "Properties")
+
+	{
+		"plugins": ["properties"]
+	}
 
 #### Character Lmiter
 
@@ -71,4 +95,4 @@ Limits the number of character in the rich text field to the value definied in <
 
 ### Your own custom plugin
 
-There's also the option to create your own Redactor plugin and link to the JS and CSS files. Just fill-in the paths in settings under, 'Custom plugin'.
+There's also the option to create your own Redactor plugin and link to the JS and CSS files. Just fill-in the paths in settings under, 'Custom plugin'. The plugin code needs to follow the Craft way of wrapping/loading the JS. Check the included Redactor plugins as an example.

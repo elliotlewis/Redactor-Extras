@@ -75,6 +75,15 @@
 }) }}
 
 {{ forms.lightswitchField({
+	label:        "Properties"|t,
+	id:           "properties",
+	name:         "properties",
+	instructions: "Assign an id or class to any block level tag. <code class=\"inlinecode\">'properties'</code>"|t,
+	on:           settings.properties,
+	errors:       settings.getErrors('properties')
+}) }}
+
+{{ forms.lightswitchField({
 	label:        "Character limit"|t,
 	id:           "limiter",
 	name:         "limiter",

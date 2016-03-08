@@ -46,6 +46,9 @@ class redactorExtrasPlugin extends BasePlugin
             'alignment' => array(
                 AttributeType::Bool, 'default' => false
             ),
+            'properties' => array(
+                AttributeType::Bool, 'default' => false
+            ),
             'limiter' => array(
                 AttributeType::Bool, 'default' => false
             ),
@@ -87,6 +90,11 @@ class redactorExtrasPlugin extends BasePlugin
             if($settings->limiter === "1")
             {
                 craft()->templates->includeJsResource('redactorextras/plugins/limiter.js');
+            }
+            
+            if($settings->properties === "1")
+            {
+                craft()->templates->includeJsResource('redactorextras/plugins/properties.js');
             }
             
             if($settings->extraPluginJs != "")
