@@ -11,7 +11,7 @@ class redactorExtrasPlugin extends BasePlugin
 
     function getVersion()
     {
-        return '1.3';
+        return '1.3.1';
     }
 
     function getDeveloper()
@@ -24,7 +24,7 @@ class redactorExtrasPlugin extends BasePlugin
         return 'http://elliotlewis.co.uk/craft';
     }
 
-    public function getDocumentationUrl()
+    public function getPluginUrl()
     {
         return 'https://github.com/elliotlewis/Redactor-Extras';
     }
