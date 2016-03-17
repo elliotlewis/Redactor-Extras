@@ -11,7 +11,7 @@ class redactorExtrasPlugin extends BasePlugin
 
     function getVersion()
     {
-        return '1.1';
+        return '1.3';
     }
 
     function getDeveloper()
@@ -27,6 +27,16 @@ class redactorExtrasPlugin extends BasePlugin
     public function getDocumentationUrl()
     {
         return 'https://github.com/elliotlewis/Redactor-Extras';
+    }
+
+    public function getDocumentationUrl()
+    {
+        return $this->getPluginUrl() . '/blob/master/README.md';
+    }
+
+    public function getReleaseFeedUrl()
+    {
+        return 'https://raw.githubusercontent.com/elliotlewis/Redactor-Extras/master/changelog.json';
     }
     
     public function getSourceLanguage()
@@ -47,6 +57,9 @@ class redactorExtrasPlugin extends BasePlugin
                 AttributeType::Bool, 'default' => false
             ),
             'properties' => array(
+                AttributeType::Bool, 'default' => false
+            ),
+            'definedlinks' => array(
                 AttributeType::Bool, 'default' => false
             ),
             'limiter' => array(
@@ -86,15 +99,20 @@ class redactorExtrasPlugin extends BasePlugin
                 craft()->templates->includeJsResource('redactorextras/plugins/alignment.js');
                 craft()->templates->includeCssResource('redactorextras/plugins/alignment.css');
             }
-
-            if($settings->limiter === "1")
-            {
-                craft()->templates->includeJsResource('redactorextras/plugins/limiter.js');
-            }
             
             if($settings->properties === "1")
             {
                 craft()->templates->includeJsResource('redactorextras/plugins/properties.js');
+            }
+            
+            if($settings->definedlinks === "1")
+            {
+                craft()->templates->includeJsResource('redactorextras/plugins/definedlinks.js');
+            }
+
+            if($settings->limiter === "1")
+            {
+                craft()->templates->includeJsResource('redactorextras/plugins/limiter.js');
             }
             
             if($settings->extraPluginJs != "")

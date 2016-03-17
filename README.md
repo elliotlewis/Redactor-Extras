@@ -6,6 +6,9 @@ Useful Redactor plugins for Craft's richtext field
 
 ### Version History
 
+[View the changelog for details](https://github.com/elliotlewis/Redactor-Extras/blob/master/changelog.json)
+
+ * 1.3 : 17 March 2016
  * 1.2 : 8 March 2016
  * 1.1 : 16 February 2016
  * 1.0 : 10 February 2016
@@ -35,12 +38,13 @@ Turn on required plugins then an example config could be:
     
 ### Description
 
-Available plugin are:
+Available plugins are:
 
  + Superscript and Subscript
  + Word count
  + Alignment
  + Properties
+ + Predefined Links
  + Character Limiter
  + Custom plugin
 
@@ -83,6 +87,23 @@ Assign an id or class to any block level tag. From the cursor position outwrds, 
 	{
 		"plugins": ["properties"]
 	}
+
+#### Predefined Links
+
+Add a list of predefined links to the link menu. These can be external or internal. Probably best to let Craft handle internal link as it spports linking to Entries and Assets.
+
+![Image of Redactor with Predefined Links modal](readme-images/definedlinks.png "Predefined Links")
+
+	{
+        plugins:        ["definedlinks"],
+        definedLinks:   [
+            { "name": "Select...", "url": "" },
+            { "name": "Google", "url": "http://google.com" },
+            { "name": "Home", "url": "/" },
+            { "name": "About", "url": "/about/" },
+            { "name": "Contact", "url": "/contact/" }
+        ]
+    }
 
 #### Character Lmiter
 

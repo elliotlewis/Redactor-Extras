@@ -84,6 +84,35 @@
 }) }}
 
 {{ forms.lightswitchField({
+	label:        "Predefined Links"|t,
+	id:           "definedlinks",
+	name:         "definedlinks",
+	instructions: "Add a list of predefined links to the link menu. <code class=\"inlinecode\">'definedlinks'</code>"|t,
+	on:           settings.definedlinks,
+	errors:       settings.getErrors('definedlinks')
+}) }}
+
+<p>
+    Example:<br>
+    *Note the config is different to Redactors plugin.
+</p>
+
+<pre class="codeblock">
+    <code>
+    {
+        plugins:        ["definedlinks"],
+        definedLinks:   [
+            { "name": "Select...", "url": "" },
+            { "name": "Google", "url": "http://google.com" },
+            { "name": "Home", "url": "/" },
+            { "name": "About", "url": "/about/" },
+            { "name": "Contact", "url": "/contact/" }
+        ]
+    }
+    </code>
+</pre>
+
+{{ forms.lightswitchField({
 	label:        "Character limit"|t,
 	id:           "limiter",
 	name:         "limiter",
