@@ -1,26 +1,18 @@
 [
     {
         "version":      "1.3.1",
-        "downloadUrl":  "https://github.com/elliotlewis/Redactor-Extras/archive/1.3.1.zip",
+        "downloadUrl":  "https://github.com/elliotlewis/Redactor-Extras/archive/v1.3.2.zip",
         "date":         "2016-03-17 19:13:00",
         "notes": [
-            "## Hotfix",
+            "## New Predefined Links plugin",
+            "[Added] Predefined Links plugin - Add a list of predefined links to the link menu",
+            "[Added] changelog.json so Craft is aware of plugin updates!",
             "[Fixed] Plugin breaking bug for GitHub link"
         ]
     },
     {
-        "version":      "1.3.0",
-        "downloadUrl":  "https://github.com/elliotlewis/Redactor-Extras/archive/1.3.0.zip",
-        "date":         "2016-03-17 18:35:00",
-        "notes": [
-            "## New Predefined Links plugin",
-            "[Added] Predefined Links plugin - Add a list of predefined links to the link menu",
-            "[Added] changelog.json so Craft is aware of plugin updates!"
-        ]
-    },
-    {
         "version":      "1.2.0",
-        "downloadUrl":  "https://github.com/elliotlewis/Redactor-Extras/archive/1.2.0.zip",
+        "downloadUrl":  "https://github.com/elliotlewis/Redactor-Extras/archive/v1.2.0.zip",
         "date":         "2016-03-08 16:33:37",
         "notes": [
             "## New Properties plugin",
@@ -30,7 +22,7 @@
     },
     {
         "version":      "1.1.0",
-        "downloadUrl":  "https://github.com/elliotlewis/Redactor-Extras/archive/1.1.0.zip",
+        "downloadUrl":  "https://github.com/elliotlewis/Redactor-Extras/archive/v1.1.0.zip",
         "date":         "2016-02-16 14:34:23",
         "notes": [
             "## New Limit plugin",
@@ -40,7 +32,7 @@
     },
     {
         "version":      "1.0.0",
-        "downloadUrl":  "https://github.com/elliotlewis/Redactor-Extras/archive/1.0.0.zip",
+        "downloadUrl":  "https://github.com/elliotlewis/Redactor-Extras/archive/v1.0.0.zip",
         "date":         "2016-02-10 17:56:52",
         "notes": [
             "## First release. Available plugins are:",
