@@ -22,7 +22,7 @@ This has only been tested with the latest Craft, may or may not work in older ve
 
 ### Installation
 
-Copy the redactorexatras folder into `craft/plugins`, then go to `Settings > Plugins` in the Craft Control Panel and click 'Install'.
+Copy the redactorextras folder into `craft/plugins`, then go to `Settings > Plugins` in the Craft Control Panel and click 'Install'.
 
 ### Configuration
 
