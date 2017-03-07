@@ -45,6 +45,15 @@
 <p>Choose from the available extra Redactor plugins:</p>
 
 {{ forms.lightswitchField({
+	label:        "Undo and Redo"|t,
+	id:           "bufferButtons",
+	name:         "bufferButtons",
+	instructions: "Add undo and redo buttons. <code class=\"inlinecode\">'bufferbuttons'</code>"|t,
+	on:           settings.bufferButtons,
+	errors:       settings.getErrors('bufferButtons')
+}) }}
+
+{{ forms.lightswitchField({
 	label:        "Superscript and Subscript"|t,
 	id:           "scriptButtons",
 	name:         "scriptButtons",
