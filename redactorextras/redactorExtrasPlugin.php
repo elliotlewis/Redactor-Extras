@@ -38,15 +38,18 @@ class redactorExtrasPlugin extends BasePlugin
     {
         return 'https://raw.githubusercontent.com/elliotlewis/Redactor-Extras/master/changelog.json';
     }
-    
+
     public function getSourceLanguage()
     {
         return 'en';
     }
-    
+
     protected function defineSettings()
     {
         return array(
+            'bufferButtons' => array(
+                AttributeType::Bool, 'default' => false
+            ),
             'scriptButtons' => array(
                 AttributeType::Bool, 'default' => false
             ),
@@ -69,20 +72,25 @@ class redactorExtrasPlugin extends BasePlugin
             'extraPluginCss'      => AttributeType::String,
         );
     }
-    
+
     public function getSettingsHtml()
     {
         return craft()->templates->render('redactorextras/_settings', array(
             'settings' => $this->getSettings()
         ));
     }
-    
+
     public function init()
 	{
 		if (craft()->request->isCpRequest())
 		{
             // Get settings
             $settings = $this->getSettings();
+
+            if($settings->bufferButtons === "1")
+            {
+                craft()->templates->includeJsResource('redactorextras/plugins/bufferbuttons.js');
+            }
 
             if($settings->scriptButtons === "1")
             {
@@ -99,12 +107,12 @@ class redactorExtrasPlugin extends BasePlugin
                 craft()->templates->includeJsResource('redactorextras/plugins/alignment.js');
                 craft()->templates->includeCssResource('redactorextras/plugins/alignment.css');
             }
-            
+
             if($settings->properties === "1")
             {
                 craft()->templates->includeJsResource('redactorextras/plugins/properties.js');
             }
-            
+
             if($settings->definedlinks === "1")
             {
                 craft()->templates->includeJsResource('redactorextras/plugins/definedlinks.js');
@@ -114,7 +122,7 @@ class redactorExtrasPlugin extends BasePlugin
             {
                 craft()->templates->includeJsResource('redactorextras/plugins/limiter.js');
             }
-            
+
             if($settings->extraPluginJs != "")
             {
                 craft()->templates->includeJsFile($settings->extraPluginJs);
