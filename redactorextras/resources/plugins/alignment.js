@@ -36,6 +36,7 @@ RedactorPlugins.alignment = function()
         {
             this.buffer.set();
             this.alignment.removeAlign();
+            this.block.addClass('text-left');
         },
         setCenter: function()
         {
