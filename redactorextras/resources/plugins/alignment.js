@@ -1,3 +1,6 @@
+// Alignment
+// Adapted from offical Redactor site
+// https://imperavi.com/redactor/plugins/alignment/
 
 if (!RedactorPlugins) var RedactorPlugins = {};
  
